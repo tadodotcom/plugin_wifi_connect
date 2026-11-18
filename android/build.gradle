@@ -1,51 +1,29 @@
-group 'com.peakysoftware.plugin_wifi_connect'
-version '1.0-SNAPSHOT'
+group = "com.peakysoftware.plugin_wifi_connect"
+version = "1.0-SNAPSHOT"
 
-buildscript {
-    ext.kotlin_version = '2.0.20'
-    repositories {
-        google()
-        jcenter()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.7.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
-rootProject.allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
+apply plugin: "com.android.library"
 
 android {
-    namespace 'com.peakysoftware.plugin_wifi_connect'
-    compileSdkVersion 34
+    namespace = "com.peakysoftware.plugin_wifi_connect"
+
+    compileSdk = 36
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = '1.8'
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
+        main.java.srcDirs += "src/main/kotlin"
     }
 
     defaultConfig {
-        minSdkVersion 16
+        minSdk = 21
     }
 }
 
-/*dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-}*/
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    }
+}

@@ -3,10 +3,10 @@ import UIKit
 import NetworkExtension
 import SystemConfiguration.CaptiveNetwork
 
-public class SwiftPluginWifiConnectPlugin: NSObject, FlutterPlugin {
+public class PluginWifiConnectPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "plugin_wifi_connect", binaryMessenger: registrar.messenger())
-    let instance = SwiftPluginWifiConnectPlugin()
+    let instance = PluginWifiConnectPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 
